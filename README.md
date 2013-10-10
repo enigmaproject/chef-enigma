@@ -1,4 +1,4 @@
-etcd_discover Cookbook
+Enigma Cookbook
 ======================
 This cookbook uses the frosty rubygem and wraps provides lwrp's for
 service discovery using etcd.

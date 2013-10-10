@@ -1,4 +1,4 @@
-etcd_discover CHANGELOG
+enigma CHANGELOG
 =======================
 
 This file is used to list changes made in each version of the etcd_discover cookbook.

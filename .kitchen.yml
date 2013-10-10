@@ -15,9 +15,10 @@ platforms:
 
 suites:
 - name: default
-  run_list: ["recipe[etcd_discover]"]
+  run_list: 
+  - recipe[enigma]
   attributes: {}
 - name: etcd
   run_list:
-  - recipe[etcd_discover]
+  - recipe[enigma]
   - recipe[etcd]
