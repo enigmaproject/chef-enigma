@@ -27,7 +27,7 @@ Attributes
     <th>Default</th>
   </tr>
   <tr>
-    <td><tt>['etcd_discover']['etcd_hosts']</tt></td>
+    <td><tt>['enigma']['etcd_hosts']</tt></td>
     <td>Array</td>
     <td>a list of etcd servers that should be queried for information</td>
     <td><tt>[]</tt></td>
@@ -36,7 +36,7 @@ Attributes
 
 Usage
 -----
-#### etcd_discover::default
+#### enigma::default
 You must have the etcd_discover recipe included on the node
 before you attempt to use the lwrp's.  This recipe installs frosty.
 
@@ -44,7 +44,7 @@ before you attempt to use the lwrp's.  This recipe installs frosty.
 {
   "name":"my_node",
   "run_list": [
-    "recipe[etcd_discover]"
+    "recipe[enigma]"
   ]
 }
 ```
