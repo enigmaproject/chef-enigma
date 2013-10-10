@@ -1,23 +1,23 @@
 etcd_discover Cookbook
 ======================
-TODO: Enter the cookbook description here.
+This cookbook uses the frosty rubygem and wraps provides lwrp's for
+service discovery using etcd.
 
-e.g.
-This cookbook makes your favorite breakfast sandwhich.
+WARNING
+-------
+This cookbook along with the rest of this project is a work in progress
+and is subject to major breaking changes.
+
 
 Requirements
 ------------
-TODO: List your cookbook requirements. Be sure to include any requirements this cookbook has on platforms, libraries, other cookbooks, packages, operating systems, etc.
 
-e.g.
-#### packages
-- `toaster` - etcd_discover needs toaster to brown your bagel.
+#### rubygems
+- `frosty` - etcd_discover uses this gem for etcd querying.
 
 Attributes
 ----------
-TODO: List you cookbook attributes here.
 
-e.g.
 #### etcd_discover::default
 <table>
   <tr>
@@ -27,20 +27,18 @@ e.g.
     <th>Default</th>
   </tr>
   <tr>
-    <td><tt>['etcd_discover']['bacon']</tt></td>
-    <td>Boolean</td>
-    <td>whether to include bacon</td>
-    <td><tt>true</tt></td>
+    <td><tt>['etcd_discover']['etcd_hosts']</tt></td>
+    <td>Array</td>
+    <td>a list of etcd servers that should be queried for information</td>
+    <td><tt>[]</tt></td>
   </tr>
 </table>
 
 Usage
 -----
 #### etcd_discover::default
-TODO: Write usage instructions for each cookbook.
-
-e.g.
-Just include `etcd_discover` in your node's `run_list`:
+You must have the etcd_discover recipe included on the node
+before you attempt to use the lwrp's.  This recipe installs frosty.
 
 ```json
 {
@@ -53,9 +51,6 @@ Just include `etcd_discover` in your node's `run_list`:
 
 Contributing
 ------------
-TODO: (optional) If this is a public cookbook, detail the process for contributing. If this is a private cookbook, remove this section.
-
-e.g.
 1. Fork the repository on Github
 2. Create a named feature branch (like `add_component_x`)
 3. Write you change
@@ -65,4 +60,4 @@ e.g.
 
 License and Authors
 -------------------
-Authors: TODO: List authors
+Jim Rosser - jarosser06@gmail.com
