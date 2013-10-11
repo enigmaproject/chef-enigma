@@ -23,6 +23,8 @@ class Chef
           @endpoint.role = new_resource.role unless new_resource.role.nil?
           @endpoint.port = new_resource.port
           @service.save_endpoint(@endpoint)
+          @node.add_service(new_resource.name)
+          @node.save
           new_resource.updated_by_last_action true
         end
       end

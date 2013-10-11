@@ -9,6 +9,7 @@ class Chef
 
         @connection = connection
         @connection.environment = new_resource.environment
+        @node = @connection.node(new_resource.ip)
       end
 
       def load_current_resource
