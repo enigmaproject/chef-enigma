@@ -1,14 +1,11 @@
-require 'chef/provider'
+require File.join(File.dirname(__FILE__), 'provider_enigma')
 
 class Chef
   class Provider
-    class EnigmaService < Chef::Provider
+    class EnigmaService < Chef::Provider::Enigma
 
       def initialize(*args)
         super
-        require 'frosty'
-        connect
-        @frosty.environment = new_resource.environment
         @service = service
       end
 
@@ -16,10 +13,6 @@ class Chef
         @current_resource ||= Chef::Resource::EnigmaService.new(new_resource.name)
         @current_resource.service(new_resource.name)
         @current_resource
-      end
-
-      def action_discover
-        ##TODO: Implement
       end
 
       def action_register
@@ -35,16 +28,7 @@ class Chef
       end
 
       def service
-        @frosty.service(new_resource.name)
-      end
-
-      def connect
-        new_resource.etcdhosts.each do |host|
-          @frosty = Frosty.new(host)
-          if @frosty.can_connect?
-            break
-          end
-        end
+        @connection.service(new_resource.name)
       end
     end
   end
