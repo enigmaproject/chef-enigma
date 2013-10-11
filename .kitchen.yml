@@ -20,5 +20,5 @@ suites:
   attributes: {}
 - name: etcd
   run_list:
-  - recipe[enigma]
   - recipe[etcd]
+  - recipe[enigma_test]
